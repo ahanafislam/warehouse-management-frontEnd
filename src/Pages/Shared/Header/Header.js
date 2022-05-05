@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
 const Header = () => {
@@ -6,15 +7,15 @@ const Header = () => {
         <header>
             <Navbar collapseOnSelect expand="lg" variant="light">
                 <Container>
-                    <Navbar.Brand href="#home">Ashbab</Navbar.Brand>
+                    <h4 href="#home">Ashbab</h4>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
                             <Nav.Link href="#features">Home</Nav.Link>
                             <Nav.Link href="#pricing">Blog</Nav.Link>
-                            {/* <Nav.Link href="#pricing">Manage Items</Nav.Link>
+                            <Nav.Link href="#pricing">Manage Items</Nav.Link>
                             <Nav.Link href="#pricing">Add Items</Nav.Link>
-                            <Nav.Link href="#pricing">My Item</Nav.Link> */}
+                            <Nav.Link href="#pricing">My Item</Nav.Link>
                             <Nav.Link href="#pricing">About</Nav.Link>
                         </Nav>
                         <Nav>
