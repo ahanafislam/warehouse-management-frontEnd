@@ -1,0 +1,27 @@
+
+[
+    {
+        "id": 1,
+        "name": "Savory-151 Chair",
+        "img": "https://i.postimg.cc/6QQ4m3wW/Savory-151.jpg",
+        "price": 80
+    },
+    {
+        "id": 2,
+        "name": "Luzon-319 Sofa",
+        "img": "https://i.postimg.cc/x1nzL54b/Luzon-319.jpg",
+        "price": 200
+    },
+    {
+        "id": 3,
+        "name": "Prose-207-NT Reading Table",
+        "img": "https://i.postimg.cc/1zYVhQ5p/Prose-207-NT.jpg",
+        "price": 80
+    },
+    {
+        "id": 4,
+        "name": "Quetzal-166-0 Center Table",
+        "img": "https://i.postimg.cc/L8DZDPcQ/Quetzal-166-0.jpg",
+        "price": 80
+    }
+]

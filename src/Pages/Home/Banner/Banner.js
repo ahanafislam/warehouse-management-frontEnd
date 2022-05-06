@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import banner_1 from '../../../images/Banner/chair.png';
-import banner_2 from '../../../images/Banner/sofa2.png';
+import banner_2 from '../../../images/Banner/sofa.png';
 import banner_3 from '../../../images/Banner/nightTable.png';
 
 const Banner = () => {
@@ -35,7 +35,7 @@ const Banner = () => {
                 <div className="d-flex flex-column flex-md-row  justify-content-between align-items-center">
                     <div className='order-1 order-md-0 mt-4 mt-md-0 w-75'>
                         <h1>Nightstand</h1>
-                        <p>Built up with world-class materials, this furniture will give you the best experience ever. Crafted from veneered engineered wood and imported fabric upholstery with soft and durable cushioning.</p>
+                        <p>Built up with world-class materials, this furniture will give you the best experience ever. Crafted from veneered engineered wood and imported wood for log time durable.</p>
                         <button className='brand-btn'>Buy Now</button>
                     </div>
                     <div className='order-0 order-md-1'>
