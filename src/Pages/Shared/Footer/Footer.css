@@ -1,0 +1,27 @@
+footer {
+    background-color: #04b4ae1a;
+    color: #333;
+}
+
+.social-link li{
+    padding: 0;
+    margin: 4px;
+    font-size: 1.5rem;
+    background-color: inherit;
+    transition: transform 1s linear;
+}
+
+.social-link li:hover{
+    transform: rotateY(360deg);
+}
+
+.social-link a {
+    padding: 2px;
+    margin: 0;
+    color: #333;
+    transition: color 1s linear;
+}
+
+.social-link a:hover {
+    color: #04b4ae;
+}

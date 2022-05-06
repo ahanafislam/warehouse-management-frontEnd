@@ -10,12 +10,12 @@ const Banner = () => {
             <Carousel.Item>
                 <div className="d-flex flex-column flex-md-row  justify-content-between align-items-center">
                     <div className='order-1 order-md-0 mt-4 mt-md-0 w-75'>
-                        <h1 className='brand-color'>Easy Chair</h1>
+                        <h1>Easy Chair</h1>
                         <p>Made from Kiln-dried imported Beech veneered engineered wood.High quality environment friendly Italian Ultra Violet (UV) and Polyurethane (PU) Lacquer in antique finish.</p>
                         <button className='brand-btn'>Buy Now</button>
                     </div>
                     <div className='order-0 order-md-1'>
-                        <img src={banner_1} alt='sofa' className='img-fluid'/>
+                        <img src={banner_1} alt='chair' className='img-fluid'/>
                     </div>
                 </div>
             </Carousel.Item>
@@ -27,19 +27,19 @@ const Banner = () => {
                         <button className='brand-btn'>Buy Now</button>
                     </div>
                     <div className='order-0 order-md-1'>
-                        <img src={banner_2} alt='Duke' className='img-fluid'/>
+                        <img src={banner_2} alt='sofa' className='img-fluid'/>
                     </div>
                 </div>
             </Carousel.Item>
             <Carousel.Item>
                 <div className="d-flex flex-column flex-md-row  justify-content-between align-items-center">
                     <div className='order-1 order-md-0 mt-4 mt-md-0 w-75'>
-                        <h1 className='brand-text'>Nightstand</h1>
+                        <h1>Nightstand</h1>
                         <p>Built up with world-class materials, this furniture will give you the best experience ever. Crafted from veneered engineered wood and imported fabric upholstery with soft and durable cushioning.</p>
                         <button className='brand-btn'>Buy Now</button>
                     </div>
                     <div className='order-0 order-md-1'>
-                        <img src={banner_3} alt='Duke' className='img-fluid'/>
+                        <img src={banner_3} alt='nightstand' className='img-fluid'/>
                     </div>
                 </div>
             </Carousel.Item>
