@@ -6,7 +6,7 @@ const InventoryItems = () => {
     return (
         <div className='mt-5'>
             <p className='text-center fs-4'>Inventory Items</p>
-            <Row sm={1} md={2} lg={3} className="g-5 me-auto ms-auto">
+            <Row xs={1} sm={1} md={2} lg={3} className="g-5 me-auto ms-auto">
                 <InventoryItem></InventoryItem>
                 <InventoryItem></InventoryItem>
                 <InventoryItem></InventoryItem>
