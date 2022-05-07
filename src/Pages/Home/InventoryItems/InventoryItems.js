@@ -1,0 +1,24 @@
+import React from 'react';
+import { Row } from 'react-bootstrap';
+import InventoryItem from '../InventoryItem/InventoryItem';
+
+const InventoryItems = () => {
+    return (
+        <div className='mt-5'>
+            <p className='text-center fs-4'>Inventory Items</p>
+            <Row sm={1} md={2} lg={3} className="g-5 me-auto ms-auto">
+                <InventoryItem></InventoryItem>
+                <InventoryItem></InventoryItem>
+                <InventoryItem></InventoryItem>
+                <InventoryItem></InventoryItem>
+                <InventoryItem></InventoryItem>
+                <InventoryItem></InventoryItem>
+            </Row>
+            <div className="text-center mt-3">
+                <button className='brand-btn'>Manage Inventories</button>
+            </div>
+        </div>
+    );
+};
+
+export default InventoryItems;
