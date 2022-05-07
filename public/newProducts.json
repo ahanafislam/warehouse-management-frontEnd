@@ -14,14 +14,14 @@
     },
     {
         "id": 3,
-        "name": "Prose-207-NT Reading Table",
+        "name": "Prose-207 Reading Table",
         "img": "https://i.postimg.cc/1zYVhQ5p/Prose-207-NT.jpg",
-        "price": 80
+        "price": 100
     },
     {
         "id": 4,
-        "name": "Quetzal-166-0 Center Table",
+        "name": "Quetzal-166 Center Table",
         "img": "https://i.postimg.cc/L8DZDPcQ/Quetzal-166-0.jpg",
-        "price": 80
+        "price": 110
     }
 ]

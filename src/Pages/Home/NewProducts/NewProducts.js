@@ -12,7 +12,7 @@ const NewProducts = () => {
     },[]);
 
     return (
-        <div className='mt-3'>
+        <div className='mt-4'>
             <p className='text-center fs-4'>New Products</p>
             <Row xs={1} sm={2} md={3} lg={4} className="g-5 me-auto ms-auto">
                 {
