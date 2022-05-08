@@ -1,0 +1,56 @@
+[
+    {   
+        "_id": 1,
+        "name": "Executive Chair",
+        "img": "https://i.postimg.cc/SKzVyWCd/Gorky-307.png",
+        "description": "Featuring a spacious and ergonomic design, this executive chair is perfect for any office. With a sturdy and durable frame, this chair is built to last. The padded, armless design offers a sleek look and comfortable feel.",
+        "price": 200,
+        "quantity": 5,
+        "supplier": "Hatil"
+    },
+    {   
+        "_id": 2,
+        "name": "Executive Table",
+        "img": "https://i.postimg.cc/xCMsPKd8/Eliot-137-MFC-EB.jpg",
+        "description": "The Executive Table is a great way to upgrade your office with a sleek and modern design. It is constructed with durable materials and has a stylish silver finish. This table is also a good size for any office, providing enough space for four people to work.",
+        "price": 230,
+        "quantity": 5,
+        "supplier": "Hatil"
+    },
+    {   
+        "_id": 3,
+        "name": "Morris-287 Sofa",
+        "img": "https://i.postimg.cc/sDVnpGCf/Morris-287.jpg",
+        "description": "The Morris-287 Sofa is the perfect choice for any living room, den, or even a home office. The soft and plush sofa is perfect for lounging or napping. You can even stretch out on the long length of the sofa and curl up with a good book.",
+        "price": 250,
+        "quantity": 5,
+        "supplier": "Hatil"
+    },
+    {   
+        "_id": 4,
+        "name": "Eppiphany-115 Bed",
+        "img": "https://i.postimg.cc/6qKMby70/Epiphany-115-0.jpg",
+        "description": "This bed is a place of tranquility. The bed is made of sturdy pine wood and has a calming color palette of white and black. The mattress is a standard size, and the headboard has a built-in reading light.",
+        "price": 240,
+        "quantity": 5,
+        "supplier": "Hatil"
+    },
+    {   
+        "_id": 5,
+        "name": "Proto-150 Dressing Table",
+        "img": "https://i.postimg.cc/MHYdCqV8/Proto-150-0.jpg",
+        "description": "The Proto-150 Dressing Table is a simple yet sturdy piece of furniture that features a fold-down desk, perfect for applying makeup or doing homework. The desk has a deep shelf for storage and is finished with a durable and beautiful cherry wood veneer.",
+        "price": 200,
+        "quantity": 5,
+        "supplier": "Hatil"
+    },
+    {   
+        "_id": 6,
+        "name": "Carlson-164 Almirah",
+        "img": "https://i.postimg.cc/v87qgLjS/Carlson-164.jpg",
+        "description": "The Carlson-164 Almirah is a highly-functional storage unit that can hold a large amount of clothing and other items. It has two shelves and three drawers that can hold a variety of items.",
+        "price": 200,
+        "quantity": 5,
+        "supplier": "Hatil"
+    }
+]
