@@ -5,6 +5,9 @@ import { useParams } from 'react-router-dom';
 const InventoryDetails = () => {
     const {item_id} = useParams();
     const [item, setItem] = useState({});
+    const [quantity, setQuantity] = useState(0);
+    
+    useEffect(() => setQuantity(item.quantity), [item.quantity]);
     
     const url = `http://localhost:5000/inventory/${item_id}`;
 
@@ -13,6 +16,23 @@ const InventoryDetails = () => {
         .then(res => res.json())
         .then(data => setItem(data))
     },[url]);
+
+    const updateStock = () => {
+        const newQuentity = quantity - 1;
+
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify({newQuentity})
+        })
+            .then(res => res.json())
+            .then(result => {
+                setQuantity(newQuentity);
+                console.log(result);
+            } );
+    }
 
     return (
         <Container>
@@ -28,9 +48,9 @@ const InventoryDetails = () => {
                         <h6>Product Id : {item._id}</h6>
                         <p>{item.description}</p>
                         <br></br>
-                        <h6>Total Stock: {item.quantity}</h6>
+                        <h6>Total Stock: {quantity}</h6>
                         <hr className='brand-text mt-2'/>
-                        <button className='brand-btn'>Delivered</button>
+                        <button className='brand-btn' onClick={updateStock}>Delivered</button>
                     </Card.Body>
                     </div>
                 </div>
