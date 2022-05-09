@@ -35,6 +35,6 @@
     color: #333;
 }
 
-div {
+div, tr{
     color: #444;
 }

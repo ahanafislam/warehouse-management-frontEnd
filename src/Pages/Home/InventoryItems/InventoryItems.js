@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import useItems from '../../../hooks/useItems';
 import InventoryItem from '../InventoryItem/InventoryItem';
 
 const InventoryItems = () => {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/inventory')
-            .then(res => res.json())
-            .then(data => setItems(data));
-    },[setItems]);
+    const [items] = useItems();
+    const navigate = useNavigate();
 
     return (
         <div className='mt-5'>
@@ -23,7 +20,7 @@ const InventoryItems = () => {
                 }
             </Row>
             <div className="text-center mt-3">
-                <button className='brand-btn'>Manage Inventories</button>
+                <button onClick={() => navigate('/manage_inventory/')} className='brand-btn'>Manage Inventories</button>
             </div>
         </div>
     );

@@ -86,7 +86,7 @@ const InventoryDetails = () => {
                         <div className='d-md-flex justify-content-between align-items-center'>
                             <form onSubmit={restock}>
                                 <div className="input-group">
-                                    <input type="number" name='stockNumber' className="form-control" placeholder="Restock Item" aria-label="Restock" aria-describedby="basic-addon2"/>
+                                    <input type="number" min="1" name='stockNumber' className="form-control" placeholder="Restock The Item" aria-label="Restock" aria-describedby="basic-addon2"/>
                                     <button type='submit' className="brand-btn-sm" id="basic-addon2">Restock</button>
                                 </div>
                             </form>
