@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const InventoryDetails = () => {
     const {item_id} = useParams();
@@ -17,19 +18,51 @@ const InventoryDetails = () => {
         .then(data => setItem(data))
     },[url]);
 
-    const updateStock = () => {
-        const newQuentity = quantity - 1;
+    // Decrease The value of Quantity
+    const decreaseQuantity = () => {
+        let newQuantity;
+
+        if(quantity <= 0){
+            newQuantity = 0;
+            toast("Sorry! your stock is empty.");
+        }
+        else{
+            newQuantity = quantity - 1;
+        }
+            
 
         fetch(url, {
             method: "PUT",
             headers: {
                 'content-type': "application/json"
             },
-            body: JSON.stringify({newQuentity})
+            body: JSON.stringify({newQuantity: newQuantity})
         })
             .then(res => res.json())
             .then(result => {
-                setQuantity(newQuentity);
+                setQuantity(newQuantity);
+                console.log(result);
+            } );
+    }
+
+    // Increase the value of Quentity
+    const restock = event => {
+        event.preventDefault();
+        const newStock = parseInt(event.target.stockNumber.value);
+
+        let updateStock = quantity + newStock;
+
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify({updateStock: updateStock})
+        })
+            .then(res => res.json())
+            .then(result => {
+                setQuantity(updateStock);
+                event.target.stockNumber.value = "";
                 console.log(result);
             } );
     }
@@ -50,7 +83,15 @@ const InventoryDetails = () => {
                         <br></br>
                         <h6>Total Stock: {quantity}</h6>
                         <hr className='brand-text mt-2'/>
-                        <button className='brand-btn' onClick={updateStock}>Delivered</button>
+                        <div className='d-md-flex justify-content-between align-items-center'>
+                            <form onSubmit={restock}>
+                                <div className="input-group">
+                                    <input type="number" name='stockNumber' className="form-control" placeholder="Restock Item" aria-label="Restock" aria-describedby="basic-addon2"/>
+                                    <button type='submit' className="brand-btn-sm" id="basic-addon2">Restock</button>
+                                </div>
+                            </form>
+                            <button className='brand-btn' onClick={decreaseQuantity}>Delivered</button>
+                        </div>
                     </Card.Body>
                     </div>
                 </div>
