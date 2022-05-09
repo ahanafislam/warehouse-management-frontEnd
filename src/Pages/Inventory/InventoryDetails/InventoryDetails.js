@@ -8,7 +8,7 @@ const InventoryDetails = () => {
     return (
         <Container>
             <h1>This is Inventory Details Page</h1>
-            <h2>Ttems id : {item_id}</h2>
+            <h2>Items id : {item_id}</h2>
         </Container>
     );
 };
