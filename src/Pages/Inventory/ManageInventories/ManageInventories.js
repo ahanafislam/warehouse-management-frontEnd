@@ -4,6 +4,7 @@ import useItems from '../../../hooks/useItems';
 import {GrDocumentUpdate} from 'react-icons/gr';
 import { useNavigate } from 'react-router-dom';
 import { FaTrashAlt } from 'react-icons/fa';
+import './ManageInventories.css';
 
 const ManageInventories = () => {
     const [items] = useItems();
@@ -17,7 +18,7 @@ const ManageInventories = () => {
 
     return (
         <Container>
-            <table class="table">
+            <table class="table table-hover table-borderless table-sm text-center">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
