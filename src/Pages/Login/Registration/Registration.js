@@ -3,6 +3,7 @@ import { Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const Registration = () => {
     const nameRef = useRef('');
@@ -35,7 +36,7 @@ const Registration = () => {
     },[user, navigate]);
 
     if(loading || updating) {
-        console.log("Lodding...");
+        return <Loading></Loading>
     }
 
     if(error || updateError) {
