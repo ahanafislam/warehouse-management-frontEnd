@@ -84,7 +84,7 @@ const MyItems = () => {
                             </tr>)
                             :
                             <tr className="text-muted">
-                                <td colspan="8">You do have not any items to display.</td>
+                                <td colSpan="8">You do have not any items to display.</td>
                             </tr>
                         }
                     </tbody>
