@@ -26,6 +26,23 @@
     color: #fff;
 }
 
+.brand-btn-md {
+    background-color: #04b4ae;
+    font-size: small;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #04b4ae;
+    font-weight: 500;
+    transition: background-color 1s linear;
+}
+
+.brand-btn-md:hover {
+    background-color: #fff;
+    border: 1px solid #04b4ae;
+    color: #04b4ae;
+}
+
 .brand-text {
     color: #04b4ae;
 }

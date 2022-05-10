@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const InventoryDetails = () => {
     const {item_id} = useParams();
     const [item, setItem] = useState({});
     const [quantity, setQuantity] = useState(0);
+    const navigate = useNavigate();
     
     useEffect(() => setQuantity(item.quantity), [item.quantity]);
     
@@ -75,24 +76,27 @@ const InventoryDetails = () => {
                         <img src={item.img} className="img-fluid rounded-start" alt="itemPicture"/>
                     </div>
                     <div className="col-md-8">
-                    <Card.Body>
-                        <h5>{item.name}</h5>
-                        <h6>Supplier : {item.supplier}</h6>
-                        <h6>Product Id : {item._id}</h6>
-                        <p>{item.description}</p>
-                        <br></br>
-                        <h6>Total Stock: {quantity}</h6>
-                        <hr className='brand-text mt-2'/>
-                        <div className='d-md-flex justify-content-between align-items-center'>
-                            <form onSubmit={restock}>
-                                <div className="input-group">
-                                    <input type="number" min="1" name='stockNumber' className="form-control" placeholder="Restock The Item" aria-label="Restock" aria-describedby="basic-addon2"/>
-                                    <button type='submit' className="brand-btn-sm" id="basic-addon2">Restock</button>
-                                </div>
-                            </form>
-                            <button className='brand-btn' onClick={decreaseQuantity}>Delivered</button>
+                        <div className="text-end mt-3">
+                            <button onClick={() => navigate('/manage_inventory/')} className='brand-btn-sm'>Manage Inventories</button>
                         </div>
-                    </Card.Body>
+                        <Card.Body>
+                            <h5>{item.name}</h5>
+                            <h6>Supplier : {item.supplier}</h6>
+                            <h6>Product Id : {item._id}</h6>
+                            <p>{item.description}</p>
+                            <br></br>
+                            <h6>Total Stock: {quantity}</h6>
+                            <hr className='brand-text mt-2'/>
+                            <div className='d-md-flex justify-content-between align-items-center'>
+                                <form onSubmit={restock}>
+                                    <div className="input-group">
+                                        <input type="number" min="1" name='stockNumber' className="form-control" placeholder="Restock The Item" aria-label="Restock" aria-describedby="basic-addon2"/>
+                                        <button type='submit' className="brand-btn-sm" id="basic-addon2">Restock</button>
+                                    </div>
+                                </form>
+                                <button className='brand-btn' onClick={decreaseQuantity}>Delivered</button>
+                            </div>
+                        </Card.Body>
                     </div>
                 </div>
             </Card>

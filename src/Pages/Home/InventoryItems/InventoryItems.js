@@ -8,12 +8,14 @@ const InventoryItems = () => {
     const [items] = useItems();
     const navigate = useNavigate();
 
+    const filterItems = items.filter((item, index) => index < 6);
+
     return (
         <div className='mt-5'>
             <p className='text-center fs-4'>Inventory Items</p>
             <Row xs={1} sm={1} md={2} lg={3} className="g-5 me-auto ms-auto">
                 {
-                    items.map(item => <InventoryItem
+                    filterItems.map(item => <InventoryItem
                         key={item._id}
                         item={item}
                     ></InventoryItem>)
