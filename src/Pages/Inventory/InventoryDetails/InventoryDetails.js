@@ -11,7 +11,7 @@ const InventoryDetails = () => {
     
     useEffect(() => setQuantity(item.quantity), [item.quantity]);
     
-    const url = `http://localhost:5000/inventory/${item_id}`;
+    const url = `https://ashbab.herokuapp.com/inventory/${item_id}`;
 
     useEffect(() => {
         fetch(url)
@@ -90,7 +90,7 @@ const InventoryDetails = () => {
                             <div className='d-md-flex justify-content-between align-items-center'>
                                 <form onSubmit={restock}>
                                     <div className="input-group">
-                                        <input type="number" min="1" name='stockNumber' className="form-control" placeholder="Restock The Item" aria-label="Restock" aria-describedby="basic-addon2"/>
+                                        <input type="number" min="1" step="1" name='stockNumber' className="form-control" placeholder="Restock The Item" aria-label="Restock" aria-describedby="basic-addon2" required/>
                                         <button type='submit' className="brand-btn-sm" id="basic-addon2">Restock</button>
                                     </div>
                                 </form>

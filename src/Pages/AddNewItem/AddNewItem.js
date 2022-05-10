@@ -24,7 +24,7 @@ const AddNewItem = () => {
             author_email: user.email
         }
 
-        fetch ('http://localhost:5000/inventory', {
+        fetch ('https://ashbab.herokuapp.com/inventory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -26,7 +26,7 @@ const MyItems = () => {
         const proceed = window.confirm('Are you sure, you want to delete that?')
 
         if(proceed) {
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://ashbab.herokuapp.com/inventory/${id}`;
             
             fetch(url, {
                 method: 'DELETE'
