@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -80,6 +81,7 @@ const Login = () => {
                         </button>
                         <p className='mt-2'>New to Ashbab? <Link to="/register" className='text-primary pe-auto text-decoration-none ms-1'>Please Sign Up</Link></p>
                         <p>Forget Password? <button onClick={resetPassword} className='btn btn-link text-primary pe-auto text-decoration-none'>Reset Password</button></p>
+                        <SocialLogin></SocialLogin>
                     </Form>
                 </div>
             </div>

@@ -1,0 +1,18 @@
+.bg-brand {
+    background-color: #04b4ae;
+    width: 50%;
+}
+
+.google-btn {
+    background-color: #fff;
+    font-size: small;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #04b4ae;
+    font-weight: 500;
+    transition: color 1s linear;
+}
+
+.google-btn:hover {
+    color: #04b4ae;
+}
