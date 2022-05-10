@@ -42,7 +42,7 @@ const AddNewItem = () => {
                 
                 if(result.acknowledged) {
                     toast("Your product successfully added.");
-                    navigate('/manage_inventory/');
+                    navigate('/my_items/');
                 }
             });
     }
