@@ -47,7 +47,7 @@ const Registration = () => {
     return (
         <Container>
             <div className='d-flex justify-content-center align-items-center me-auto ms-auto'>
-                <div className="form-shadow p-5">
+                <div className="form-shadow p-5 col-md-5">
                     <h2 className='brand-text text-center'>Sign Up</h2>
                     {errorElement}
                     <Form onSubmit={handleRegister}>

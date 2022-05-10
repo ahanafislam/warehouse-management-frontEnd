@@ -63,7 +63,7 @@ const Login = () => {
     return (
         <Container>
             <div className='d-flex justify-content-center align-items-center me-auto ms-auto mt-2'>
-                <div className="form-shadow p-5">
+                <div className="form-shadow p-5 col-md-5">
                     <h2 className='brand-text text-center'>Log In</h2>
                     {errorElement}
                     <Form onSubmit={handleLogin}>
