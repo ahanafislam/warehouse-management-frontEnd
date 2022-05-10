@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import { signOut } from 'firebase/auth';
+import CustomLink from '../CustomLink/CustomLink';
 
 const Header = () => {
     const [user, loading] = useAuthState(auth);
@@ -24,18 +25,18 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/">Home</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/blogs">Blog</Nav.Link>
                             {
                                 user ?
                                     <>
-                                        <Nav.Link as={Link} to="/manage_inventory/">Manage Items</Nav.Link>
-                                        <Nav.Link as={Link} to="/add_new_item/">Add Item</Nav.Link>
-                                        <Nav.Link as={Link} to="/my_items/">My Items</Nav.Link>
+                                        <Nav.Link as={CustomLink} to="/manage_inventory/">Manage Items</Nav.Link>
+                                        <Nav.Link as={CustomLink} to="/add_new_item/">Add Item</Nav.Link>
+                                        <Nav.Link as={CustomLink} to="/my_items/">My Items</Nav.Link>
                                     </>
                                 : ""
                             }
-                            <Nav.Link href="#pricing">About</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/about">About</Nav.Link>
                         </Nav>
                         <Nav>
                             {
@@ -43,7 +44,7 @@ const Header = () => {
                                 ?
                                  <button onClick={() => signOut(auth)} className="m-1 brand-btn-sm">Log out</button>
                                 :
-                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                 <Nav.Link as={CustomLink} to="/login">Login</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>
