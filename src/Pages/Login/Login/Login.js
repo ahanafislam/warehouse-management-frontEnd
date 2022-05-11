@@ -39,12 +39,24 @@ const Login = () => {
         errorElement = <p className='text-danger'>{error?.message}</p>
     }
 
-    const handleLogin = event => {
+    const handleLogin = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email,password);
+        await signInWithEmailAndPassword(email,password);
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({email})
+        }
+
+        const response = await fetch('http://localhost:5000/get_auth_token', options);
+        const data = await response.json();
+        localStorage.setItem('accessToken', data.accessToken);
     }
 
     const resetPassword = async () => {

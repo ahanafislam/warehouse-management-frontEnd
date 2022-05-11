@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import const_img from "../../images/unser_constraction.png";
+import const_img from "../../images/under_construction.png";
 
 const About = () => {
     return (
