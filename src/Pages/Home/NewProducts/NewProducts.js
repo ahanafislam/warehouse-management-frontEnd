@@ -6,7 +6,7 @@ const NewProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('newProducts.json')
+        fetch('https://ashbab.herokuapp.com/newProducts')
             .then(res => res.json())
             .then(data => setProducts(data));
     },[]);
@@ -17,7 +17,7 @@ const NewProducts = () => {
             <Row xs={1} sm={2} md={3} lg={4} className="g-5 me-auto ms-auto">
                 {
                     products.map(product => <NewProduct
-                        key={product.id}
+                        key={product._id}
                         product={product}
                     ></NewProduct>)
                 }
