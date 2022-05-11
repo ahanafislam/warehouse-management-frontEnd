@@ -10,9 +10,9 @@ Below are some descriptions of this website:
 * In My item page user can see the list of items that they was added.
 * They also can delete inventory items. 
 
-##### List of technologies (frameworks, libraries) used in this project.
+### List of technologies (frameworks, libraries) used in this project.
 
-######For Client Site
+#### For Client Site
 
 1. React JS Library;
 2. React Bootstrap;
@@ -22,7 +22,7 @@ Below are some descriptions of this website:
 6. React-Firebase-Hooks;
 7. React-icons;
 
-######For Server Site
+#### For Server Site
 1. Express js;
 2. JSON Web Token;
 3. MongoDB for Manage data.
