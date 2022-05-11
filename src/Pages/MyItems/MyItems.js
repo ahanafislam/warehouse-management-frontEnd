@@ -1,21 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import {GrDocumentUpdate} from 'react-icons/gr';
 import { useNavigate } from 'react-router-dom';
 import { FaTrashAlt } from 'react-icons/fa';
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 import { toast } from 'react-toastify';
-import useItems from '../../hooks/useItems';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 
 const MyItems = () => {
-    const [items, setItems] = useItems();
+    const [items, setItems] = useState([]);
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
 
-    const myItems = items.filter( item => item.author_email === user.email);
-    
+    useEffect(() => {
+        // Fetch User items that, he/she was added.
+        const getItems = async () => {
+            const email = user.email;
+            const url = `http://localhost:5000/my_item?email=${email}`;
+            const options = {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            }
+
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+                setItems(data);
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
+        getItems();
+    },[user, navigate]);
+
     let num = 1;
 
     const navigateToInventoryDetail = id => {
@@ -65,9 +86,9 @@ const MyItems = () => {
                     </thead>
                     <tbody>
                         {   
-                            myItems.length > 0
+                            items.length > 0
                             ?
-                            myItems.map(item => <tr key={item._id}>
+                            items.map(item => <tr key={item._id}>
                                 <th scope="row">{num++}</th>
                                 <td><img src={item.img} style={{width:"40px"}} alt="product_img"/></td>
                                 <td>{item.name}</td>

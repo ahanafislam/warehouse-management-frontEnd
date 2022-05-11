@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import './Login.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -14,6 +14,7 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
+    const [token, setToken] = useState(false);
 
     let errorElement;
     const [
@@ -28,8 +29,8 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        user && navigate(from, { replace: true });
-    },[user, navigate, from]);
+        token && navigate(from, { replace: true });
+    },[token, navigate, from]);
 
     if(loading || sending) {
         return <Loading></Loading>
@@ -57,6 +58,7 @@ const Login = () => {
         const response = await fetch('http://localhost:5000/get_auth_token', options);
         const data = await response.json();
         localStorage.setItem('accessToken', data.accessToken);
+        setToken(true);
     }
 
     const resetPassword = async () => {
