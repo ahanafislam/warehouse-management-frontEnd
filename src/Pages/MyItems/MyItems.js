@@ -18,7 +18,7 @@ const MyItems = () => {
         // Fetch User items that, he/she was added.
         const getItems = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/my_item?email=${email}`;
+            const url = `https://ashbab.herokuapp.com/my_item?email=${email}`;
             const options = {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

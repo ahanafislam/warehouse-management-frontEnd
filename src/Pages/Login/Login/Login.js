@@ -55,7 +55,7 @@ const Login = () => {
             body: JSON.stringify({email})
         }
 
-        const response = await fetch('http://localhost:5000/get_auth_token', options);
+        const response = await fetch('https://ashbab.herokuapp.com/get_auth_token', options);
         const data = await response.json();
         localStorage.setItem('accessToken', data.accessToken);
         setToken(true);
