@@ -29,8 +29,10 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        token && navigate(from, { replace: true });
-    },[token, navigate, from]);
+        if(user && token) {
+            navigate(from, { replace: true });
+        }
+    },[user,token, navigate, from]);
 
     if(loading || sending) {
         return <Loading></Loading>
