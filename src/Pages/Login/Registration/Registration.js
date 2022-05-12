@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth';
@@ -11,6 +11,7 @@ const Registration = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const [token, setToken] = useState(false);
     
     let errorElement;
 
@@ -30,11 +31,26 @@ const Registration = () => {
         
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({email})
+        }
+
+        const response = await fetch('https://ashbab.herokuapp.com/get_auth_token', options);
+        const data = await response.json();
+        localStorage.setItem('accessToken', data.accessToken);
+        setToken(true);
     }
 
     useEffect(() => {
-        user && navigate("/");
-    },[user, navigate]);
+        if(token && user) {
+            navigate("/");
+        }
+    },[user, navigate, token]);
 
     if(loading || updating) {
         return <Loading></Loading>
