@@ -13,6 +13,7 @@ const MyItems = () => {
     const [items, setItems] = useState([]);
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
+    const [myItemLoading, setMyItemLoading] = useState(true);
 
     useEffect(() => {
         // Fetch User items that, he/she was added.
@@ -29,9 +30,11 @@ const MyItems = () => {
                 const response = await fetch(url, options);
                 const data = await response.json();
                 setItems(data);
+                setMyItemLoading(false);
             }
             catch(error) {
                 console.log(error);
+                setMyItemLoading(false);
             }
         }
         getItems();
@@ -41,6 +44,10 @@ const MyItems = () => {
 
     const navigateToInventoryDetail = id => {
         navigate(`/inventory/${id}`);
+    }
+
+    if(myItemLoading) {
+        return <Loading/>;
     }
 
     const handleDelete = id => {

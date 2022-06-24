@@ -1,14 +1,23 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import useItems from '../../../hooks/useItems';
 import InventoryItem from '../InventoryItem/InventoryItem';
+import Loading from '../../Shared/Loading/Loading';
+import { useQuery } from 'react-query';
 
 const InventoryItems = () => {
-    const [items] = useItems();
     const navigate = useNavigate();
 
-    const filterItems = items.filter((item, index) => index < 6);
+    const { isLoading, error, data:items } = useQuery('items', () =>
+        fetch('https://ashbab.herokuapp.com/inventory')
+        .then(res =>res.json())
+    )
+
+    const filterItems = items?.filter((item, index) => index < 6);
+
+    if(isLoading) {
+        return <Loading/>
+    }
 
     return (
         <div className='mt-5'>

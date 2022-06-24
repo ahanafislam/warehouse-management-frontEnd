@@ -6,7 +6,9 @@ const useItems = () => {
     useEffect(() => {
         fetch('https://ashbab.herokuapp.com/inventory')
             .then(res => res.json())
-            .then(data => setItems(data));
+            .then(data => {
+                setItems(data);
+            });
     },[setItems]);
 
     return [items, setItems];
